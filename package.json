@@ -1,15 +1,16 @@
 {
-  "name": "qvac-edge",
+  "name": "mededge",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "MedEdge — private, offline medical RAG + P2P delegated inference on QVAC (@qvac/sdk).",
   "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "ask": "node src/ask.js",
+    "provider": "node src/provider.js",
+    "consumer": "node src/consumer.js",
+    "smoke": "node smoke.js",
+    "export-logs": "node tools/export-csv.js"
+  },
   "dependencies": {
     "@qvac/sdk": "^0.13.5"
   }
