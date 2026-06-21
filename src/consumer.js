@@ -34,5 +34,9 @@ for (const q of DEMO_QUESTIONS) {
   console.log("\n");
 }
 await a.close();
-void close();
+// Gracefully close the SDK / DHT connection so the provider sees a clean disconnect
+// (avoids a cosmetic ETIMEDOUT on the provider after the answers are already delivered).
+await close();
+// Give the peer a moment to receive the close, then exit (DHT keeps the loop alive).
+await new Promise((r) => setTimeout(r, 800));
 process.exit(0);
