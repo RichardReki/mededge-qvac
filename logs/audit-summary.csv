@@ -1,0 +1,25 @@
+ts,mode,event,device,model,role,delegated,loadMs,ingestMs,searchMs,promptTokens,generatedTokens,ttftMs,tokensPerSec,backendDevice,ragTopScore,topScore,hits,chunksProcessed,query
+2026-06-21T16:14:26.213Z,local,session_start,MSI (win32/x64),,,,,,,,,,,,,,,,
+2026-06-21T16:14:31.838Z,local,model_load,MSI (win32/x64),GTE_LARGE_FP16,embedding,false,5624,,,,,,,,,,,,
+2026-06-21T16:14:44.896Z,local,model_load,MSI (win32/x64),MEDGEMMA_4B_IT_Q4_1,generation,false,13056,,,,,,,,,,,,
+2026-06-21T16:14:46.618Z,local,rag_ingest,MSI (win32/x64),,,,,1564,,,,,,,,,,19,
+2026-06-21T16:14:46.633Z,local,rag_search,MSI (win32/x64),,,,,,14,,,,,,,0.6137714505060254,4,,Reply with the single word READY.
+2026-06-21T16:14:47.197Z,local,warmup,MSI (win32/x64),MEDGEMMA_4B_IT_Q4_1,,false,,,,903,2,290.118,57.58046870501526,gpu,0.6137714505060254,,,,Reply with the single word READY.
+2026-06-21T16:14:47.219Z,local,rag_search,MSI (win32/x64),,,,,,22,,,,,,,0.7239013809524555,4,,What lifestyle changes help manage high blood pressure?
+2026-06-21T16:14:48.226Z,local,inference,MSI (win32/x64),MEDGEMMA_4B_IT_Q4_1,,false,,,,1017,49,146.718,71.21751427620478,gpu,0.7239013809524555,,,,What lifestyle changes help manage high blood pressure?
+2026-06-21T16:14:48.240Z,local,rag_search,MSI (win32/x64),,,,,,14,,,,,,,0.7514803636980121,3,,"How is type 2 diabetes usually monitored, and what is a common first-line medication?"
+2026-06-21T16:14:48.999Z,local,inference,MSI (win32/x64),MEDGEMMA_4B_IT_Q4_1,,false,,,,954,43,143.937,99.56400228765662,gpu,0.7514803636980121,,,,"How is type 2 diabetes usually monitored, and what is a common first-line medication?"
+2026-06-21T16:14:49.008Z,local,rag_search,MSI (win32/x64),,,,,,8,,,,,,,0.725742083042296,4,,What asthma symptoms mean someone should seek urgent care?
+2026-06-21T16:14:49.757Z,local,inference,MSI (win32/x64),MEDGEMMA_4B_IT_Q4_1,,false,,,,955,51,137.927,114.34157190515481,gpu,0.725742083042296,,,,What asthma symptoms mean someone should seek urgent care?
+2026-06-21T16:14:50.426Z,local,session_close,MSI (win32/x64),,,,,,,,,,,,,,,,
+2026-06-21T16:15:08.596Z,p2p-consumer,session_start,MSI (win32/x64),,,,,,,,,,,,,,,,
+2026-06-21T16:15:13.166Z,p2p-consumer,model_load,MSI (win32/x64),GTE_LARGE_FP16,embedding,false,4569,,,,,,,,,,,,
+2026-06-21T16:15:33.018Z,p2p-consumer,model_load,MSI (win32/x64),MEDGEMMA_4B_IT_Q4_1,generation,true,19851,,,,,,,,,,,,
+2026-06-21T16:15:34.651Z,p2p-consumer,rag_ingest,MSI (win32/x64),,,,,1298,,,,,,,,,,19,
+2026-06-21T16:15:34.669Z,p2p-consumer,rag_search,MSI (win32/x64),,,,,,17,,,,,,,0.6137714505060254,3,,Reply with the single word READY.
+2026-06-21T16:15:34.910Z,p2p-consumer,warmup,MSI (win32/x64),MEDGEMMA_4B_IT_Q4_1,,true,,,,663,2,128.894,118.99095668729177,gpu,0.6137714505060254,,,,Reply with the single word READY.
+2026-06-21T16:15:34.927Z,p2p-consumer,rag_search,MSI (win32/x64),,,,,,14,,,,,,,0.7239013809524555,4,,What lifestyle changes help manage high blood pressure?
+2026-06-21T16:15:35.674Z,p2p-consumer,inference,MSI (win32/x64),MEDGEMMA_4B_IT_Q4_1,,true,,,,1017,49,147.957,118.86337504063187,gpu,0.7239013809524555,,,,What lifestyle changes help manage high blood pressure?
+2026-06-21T16:15:35.686Z,p2p-consumer,rag_search,MSI (win32/x64),,,,,,11,,,,,,,0.7686936558227163,4,,What are red-flag asthma symptoms that need urgent care?
+2026-06-21T16:15:36.410Z,p2p-consumer,inference,MSI (win32/x64),MEDGEMMA_4B_IT_Q4_1,,true,,,,1110,51,189.423,121.44216138472638,gpu,0.7686936558227163,,,,What are red-flag asthma symptoms that need urgent care?
+2026-06-21T16:15:37.078Z,p2p-consumer,session_close,MSI (win32/x64),,,,,,,,,,,,,,,,

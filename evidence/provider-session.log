@@ -1,0 +1,73 @@
+🚀 Starting QVAC P2P provider (this strong device will run MedGemma for remote consumers)...
+[sdk:server] Stale lock file detected (PID 29944 is dead, started 2026-06-21T16:02:14.638Z). Removing.
+[sdk:server] 🐻 Hello from Bare
+[sdk:server] Parsed RPC configuration from arguments
+[sdk:server] Running in desktop mode, connecting to IPC socket: \\.\pipe\qvac-worker-22108-mqnz7uuq-3d93
+[sdk:server] Connecting to IPC socket at \\.\pipe\qvac-worker-22108-mqnz7uuq-3d93
+[sdk:server] Bare worker started and listening for RPC requests
+[sdk:server] Connected to IPC server
+[sdk:client] ℹ️ No config file found, using SDK defaults
+[sdk:client] 📱 Runtime context: { runtime: 'node', platform: 'win32' }
+[sdk:client] ✅ Initialization complete
+[sdk:server] 🌐 Waiting for DHT to fully bootstrap...
+[sdk:server] 🌐 Announcing provider on DHT (binding keyPair)...
+[sdk:server] 🎯 Provider is listening and ready to accept connections
+
+✅ Provider online.
+🔑 Provider public key:
+   2c6a2895c4b3fce893ca6626c15c9d08dcf4a9a1b3f7d42d9346e8dd4203afd1
+
+▶ On the consumer device run:
+   node src/consumer.js 2c6a2895c4b3fce893ca6626c15c9d08dcf4a9a1b3f7d42d9346e8dd4203afd1
+
+📡 Waiting for delegated inference requests... (Ctrl+C to stop)
+[sdk:server] 📡 New connection established from: 4831b96b9036d95a...
+[sdk:server] [request-lifecycle] begin requestId=fa5f0526-ff99-4b96-8202-96e3c7ea2ca2 kind=loadModel modelId=- state=running
+[sdk:server] Loading from registry: unsloth/medgemma-4b-it-GGUF/blob/fa17ea2647ef236db91adfe1465a61ab6562cf2c/medgemma-4b-it-Q4_1.gguf
+[sdk:server] ✅ Model cached with correct size: C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] ✅ Model already cached and validated: C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] ✅ Using cached model: C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] Loaded Model to C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] llamacpp-completion: Loading model ef5d92de70a24c96...
+parse: load the model metadata from disk file.
+initFromConfig: load the model from disk file and apply lora adapter, if any.
+common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
+common_init_result: added <eos> logit bias = -inf
+common_init_result: added <end_of_turn> logit bias = -inf
+common_init_result: added </s> logit bias = -inf
+[sdk:server] llamacpp-completion model ef5d92de70a24c96 loaded
+[sdk:server] Local model registered: ef5d92de70a24c96 (MEDGEMMA_4B_IT_Q4_1) -> C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] [request-lifecycle] end requestId=fa5f0526-ff99-4b96-8202-96e3c7ea2ca2 kind=loadModel modelId=- state=completed durationMs=12914
+[sdk:server] [request-lifecycle] begin requestId=e8829abb-8337-488b-9855-9a244da86fda kind=completion modelId=ef5d92de70a24c96 state=running
+[sdk:server] [request-lifecycle] end requestId=e8829abb-8337-488b-9855-9a244da86fda kind=completion modelId=ef5d92de70a24c96 state=completed durationMs=22474
+[sdk:server] [request-lifecycle] begin requestId=5435a226-34db-4cdc-bb86-180a147c7dec kind=completion modelId=ef5d92de70a24c96 state=running
+[sdk:server] [request-lifecycle] end requestId=5435a226-34db-4cdc-bb86-180a147c7dec kind=completion modelId=ef5d92de70a24c96 state=completed durationMs=831
+[sdk:server] [request-lifecycle] begin requestId=9a928491-bfb5-4b78-9113-b622da7729d3 kind=completion modelId=ef5d92de70a24c96 state=running
+[sdk:server] [request-lifecycle] end requestId=9a928491-bfb5-4b78-9113-b622da7729d3 kind=completion modelId=ef5d92de70a24c96 state=completed durationMs=1425
+[sdk:server] Model ef5d92de70a24c96 unloaded
+[sdk:server] ❌ Connection error for peer 4831b96b9036d95a: Error: connection timed out {code: 'ETIMEDOUT' }
+[sdk:server] 📡 New connection established from: d95e8cd3a7af9586...
+[sdk:server] [request-lifecycle] begin requestId=d55fed75-6f39-4b52-b00a-32f61cd008e7 kind=loadModel modelId=- state=running
+[sdk:server] Loading from registry: unsloth/medgemma-4b-it-GGUF/blob/fa17ea2647ef236db91adfe1465a61ab6562cf2c/medgemma-4b-it-Q4_1.gguf
+[sdk:server] ✅ Model cached with correct size: C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] ✅ Model already cached and validated: C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] ✅ Using cached model: C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] Loaded Model to C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] llamacpp-completion: Loading model ef5d92de70a24c96...
+parse: load the model metadata from disk file.
+initFromConfig: load the model from disk file and apply lora adapter, if any.
+common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
+common_init_result: added <eos> logit bias = -inf
+common_init_result: added <end_of_turn> logit bias = -inf
+common_init_result: added </s> logit bias = -inf
+[sdk:server] llamacpp-completion model ef5d92de70a24c96 loaded
+[sdk:server] Local model registered: ef5d92de70a24c96 (MEDGEMMA_4B_IT_Q4_1) -> C:\Users\34042\.qvac\models\76e01af02c1182aa_medgemma-4b-it-Q4_1.gguf
+[sdk:server] [request-lifecycle] end requestId=d55fed75-6f39-4b52-b00a-32f61cd008e7 kind=loadModel modelId=- state=completed durationMs=12653
+[sdk:server] [request-lifecycle] begin requestId=7d915cc6-28fc-4974-bcb4-d01b39448e5c kind=completion modelId=ef5d92de70a24c96 state=running
+[sdk:server] [request-lifecycle] end requestId=7d915cc6-28fc-4974-bcb4-d01b39448e5c kind=completion modelId=ef5d92de70a24c96 state=completed durationMs=223
+[sdk:server] [request-lifecycle] begin requestId=15c8f6c5-c5cc-450a-84d8-ac1b2b7c1067 kind=completion modelId=ef5d92de70a24c96 state=running
+[sdk:server] [request-lifecycle] end requestId=15c8f6c5-c5cc-450a-84d8-ac1b2b7c1067 kind=completion modelId=ef5d92de70a24c96 state=completed durationMs=741
+[sdk:server] [request-lifecycle] begin requestId=7c90dfea-9b44-4c08-81b7-8a2c2479e9f4 kind=completion modelId=ef5d92de70a24c96 state=running
+[sdk:server] [request-lifecycle] end requestId=7c90dfea-9b44-4c08-81b7-8a2c2479e9f4 kind=completion modelId=ef5d92de70a24c96 state=completed durationMs=716
+[sdk:server] Model ef5d92de70a24c96 unloaded
+[sdk:server] ❌ Connection error for peer d95e8cd3a7af9586: Error: connection timed out {code: 'ETIMEDOUT' }

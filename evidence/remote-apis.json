@@ -1,0 +1,20 @@
+{
+  "_note": "Structured disclosure of every remote / cloud API call this project makes, per the QVAC hackathon rules. Required even when the answer is 'none'.",
+  "project": "MedEdge",
+  "remoteApiCalls": [],
+  "aiInference": {
+    "allLocalOrP2P": true,
+    "sdk": "@qvac/sdk",
+    "engines": ["llamacpp-completion (MedGemma)", "llamacpp-embedding (GTE-large)"],
+    "note": "All AI inference (embeddings, RAG retrieval, and MedGemma text generation) runs on-device via the QVAC SDK, or is delegated peer-to-peer to another user-owned device over the Hyperswarm DHT. No cloud AI API (OpenAI, Anthropic, Google, etc.) is ever called."
+  },
+  "modelAssetDownload": {
+    "isInference": false,
+    "mechanism": "QVAC P2P model registry (Hyperswarm / Hyperdrive) with HTTP blob fallback",
+    "sources": [
+      "unsloth/medgemma-4b-it-GGUF (Hugging Face, via QVAC registry)",
+      "ChristianAzinn/gte-large-gguf (Hugging Face, via QVAC registry)"
+    ],
+    "note": "Model weights are fetched ONCE on first run and cached at ~/.qvac/models. This is a one-time asset download, not inference, and is explicitly permitted by the rules. Disclosed here for full transparency. After the first run the app works fully offline (airplane mode)."
+  }
+}

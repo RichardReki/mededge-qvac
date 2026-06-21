@@ -1,0 +1,10 @@
+node_modules/
+*.tmp
+.DS_Store
+
+# Verbose raw run captures (the structured audit JSONL/CSV in logs/ ARE committed as evidence)
+logs/ask-run.txt
+logs/consumer-run.txt
+logs/consumer-nofallback.txt
+logs/provider-run.txt
+logs/predownload.log
