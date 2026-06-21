@@ -54,13 +54,29 @@ export async function createAssistant({ mode = "local", delegate = null } = {}) 
   console.log(`✓ embedding model loaded locally (${EMBED_MODEL_NAME})`);
 
   // 2) Generation model — local, or delegated to a P2P provider.
+  // Same-machine P2P holepunch can fail on a cold DHT (PEER_CONNECTION_FAILED);
+  // auto-retry the delegated connect a few times so it connects reliably once the
+  // DHT warms up — no manual re-runs needed during a demo.
   t = performance.now();
-  const genId = await loadModel({
-    modelSrc: GEN_MODEL,
-    modelConfig: GEN_MODEL_CONFIG,
-    onProgress: throttle(GEN_MODEL_NAME),
-    ...(delegate ? { delegate } : {}),
-  });
+  const loadGen = async (attempt = 1) => {
+    try {
+      return await loadModel({
+        modelSrc: GEN_MODEL,
+        modelConfig: GEN_MODEL_CONFIG,
+        onProgress: throttle(GEN_MODEL_NAME),
+        ...(delegate ? { delegate } : {}),
+      });
+    } catch (err) {
+      const msg = `${err?.code ?? ""} ${err?.message ?? ""}`;
+      const retriable =
+        delegate && attempt < 8 && /PEER_CONNECTION_FAILED|DELEGATE_CONNECTION_FAILED|MODEL_LOAD_FAILED|connection/i.test(msg);
+      if (!retriable) throw err;
+      console.log(`  ⟳ P2P connect failed (attempt ${attempt}) — warming DHT, retrying in 4s...`);
+      await new Promise((r) => setTimeout(r, 4000));
+      return loadGen(attempt + 1);
+    }
+  };
+  const genId = await loadGen();
   audit.record("model_load", {
     model: GEN_MODEL_NAME,
     modelId: genId,
